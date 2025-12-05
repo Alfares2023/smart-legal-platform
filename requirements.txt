@@ -1,0 +1,8 @@
+﻿streamlit
+requests
+fastapi
+uvicorn
+pydantic
+python-multipart
+firebase-admin
+google-cloud-firestore

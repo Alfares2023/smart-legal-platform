@@ -1,0 +1,45 @@
+Metadata-Version: 2.4
+Name: y2
+Version: 2025.4
+Summary: Why have two when one will do?
+Project-URL: Home, https://github.com/mangoumbrella/y2
+Project-URL: Source, https://github.com/mangoumbrella/y2
+Author-email: Mango Umbrella LLC <hi@mangoumbrella.com>
+License-Expression: Apache-2.0
+License-File: LICENSE
+Keywords: CLI,Developer,Tool,Utility
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Utilities
+Requires-Python: >=3.10
+Requires-Dist: beautifulsoup4>=4.13.4
+Requires-Dist: cyclopts>=3.19.0
+Requires-Dist: selenium>=4.33.0
+Requires-Dist: yib>=0.2.0
+Description-Content-Type: text/markdown
+
+# y2
+
+Why have two when one will do?
+
+<p>
+<a href="https://pypi.org/project/y2"><img alt="PyPI" src="https://img.shields.io/pypi/v/y2"></a>
+<a href="https://pypi.org/project/y2"><img alt="Python veresions supported" src="https://img.shields.io/pypi/pyversions/y2"></a>
+<a href="https://github.com/mangoumbrella/y2/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/pypi/l/y2.svg"></a>
+</p>
+
+## Changelog
+
+See [CHANGELOG.md](https://github.com/mangoumbrella/y2/blob/main/CHANGELOG.md).
+
+## License
+
+[y2](https://github.com/mangoumbrella/y2) is licensed under the terms of the Apache license. See [LICENSE](https://github.com/mangoumbrella/y2/blob/main/LICENSE) for more information.

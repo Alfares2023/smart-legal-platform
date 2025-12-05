@@ -1,0 +1,2 @@
+[console_scripts]
+y2 = y2.__main__:app

@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المستشار الـمُحكِم | منصة الذكاء القانوني</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        legal: {
+                            900: '#0f172a', // كحلي غامق جداً
+                            800: '#1e293b',
+                            primary: '#1e3a8a', // أزرق ملكي
+                            gold: '#d97706', // ذهبي للتركيز
+                            bg: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f1f5f9;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* تأثير الزجاج */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* تخصيص شريط التمرير */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        .btn-hover-effect {
+            transition: all 0.3s ease;
+        }
+        .btn-hover-effect:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Loader Animation */
+        .loader-dots div {
+            animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+        .loader-dots div:nth-child(1) { left: 8px; animation: loader-dots1 0.6s infinite; }
+        .loader-dots div:nth-child(2) { left: 8px; animation: loader-dots2 0.6s infinite; }
+        .loader-dots div:nth-child(3) { left: 32px; animation: loader-dots2 0.6s infinite; }
+        .loader-dots div:nth-child(4) { left: 56px; animation: loader-dots3 0.6s infinite; }
+        @keyframes loader-dots1 { 0% { transform: scale(0); } 100% { transform: scale(1); } }
+        @keyframes loader-dots3 { 0% { transform: scale(1); } 100% { transform: scale(0); } }
+        @keyframes loader-dots2 { 0% { transform: translate(0, 0); } 100% { transform: translate(24px, 0); } }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <header class="bg-legal-900 text-white shadow-lg sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-legal-gold rounded-lg flex items-center justify-center text-white shadow-glow">
+                    <i class="fa-solid fa-scale-balanced text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold tracking-wide">المستشار الـمُحكِم</h1>
+                    <p class="text-[10px] text-gray-400 font-light tracking-wider">SMART LEGAL COUNSEL</p>
+                </div>
+            </div>
+            <div class="hidden md:flex gap-4 text-sm text-gray-300">
+                <span><i class="fa-solid fa-shield-halved ml-1"></i> آمن ومشفر</span>
+                <span><i class="fa-solid fa-brain ml-1"></i> مدعوم بالذكاء الاصطناعي</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-4xl mx-auto text-center py-8 lg:py-12 px-4">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-legal-900 mb-4 leading-tight">
+            ضمان العقود الآمنة والـمُحكَمة
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            منصة الذكاء الاصطناعي الأولى لتحليل المخاطر القانونية، وصياغة العقود المتكاملة، وتوفير الاستشارات المتخصصة.
+        </p>
+        <a href="#generate-form" class="mt-6 inline-flex items-center gap-2 bg-legal-primary text-white font-bold py-3 px-8 rounded-full btn-hover-effect text-base shadow-lg shadow-legal-primary/30">
+            ابدأ الآن بالتحليل المجاني <i class="fa-solid fa-arrow-down-long"></i>
+        </a>
+    </div>
+    <main class="flex-grow p-4 sm:p-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <section class="glass-panel rounded-xl shadow-lg border-t-4 border-legal-primary flex flex-col h-full overflow-hidden transition-all hover:shadow-xl">
+                <div class="p-6 pb-4 border-b border-gray-100 bg-white">
+                    <h2 class="text-xl font-bold text-legal-900 flex items-center gap-2">
+                        <i class="fa-solid fa-file-pen text-legal-gold"></i>
+                        صياغة العقود الذكية
+                    </h2>
+                    <p class="text-xs text-gray-500 mt-1">توليد عقود متكاملة بناءً على المعايير القانونية.</p>
+                </div>
+
+                <div class="p-6 flex-grow flex flex-col">
+                    <form id="generate-form" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-600 mb-1">موضوع العقد</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400"><i class="fa-regular fa-folder"></i></span>
+                                <input type="text" id="g-topic" placeholder="مثال: عقد عمل، اتفاقية سرية..." required
+                                    class="w-full pr-10 pl-3 py-2.5 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-legal-primary focus:border-legal-primary outline-none text-sm transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-600 mb-1">أطراف العقد</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400"><i class="fa-solid fa-users"></i></span>
+                                <input type="text" id="g-parties" placeholder="الطرف الأول، الطرف الثاني..." required
+                                    class="w-full pr-10 pl-3 py-2.5 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-legal-primary outline-none text-sm transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-600 mb-1">الشروط والأحكام الرئيسية</label>
+                            <textarea id="g-key-terms" rows="4" placeholder="اكتب التفاصيل هنا (المبالغ، المدد، الشروط الجزائية)..." required
+                                class="w-full p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-legal-primary outline-none text-sm transition-all resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-legal-primary text-white font-bold py-2.5 rounded-lg btn-hover-effect flex justify-center items-center gap-2">
+                            <span>بدء الصياغة</span>
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </button>
+                    </form>
+
+                    <div id="g-loader" class="hidden flex-col items-center justify-center py-8 space-y-3">
+                        <div class="loader-dots relative w-16 h-4"><div></div><div></div><div></div><div></div></div>
+                        <span class="text-xs text-legal-primary font-medium animate-pulse">جاري معالجة النصوص القانونية...</span>
+                    </div>
+
+                    <div id="g-result" class="hidden mt-4 flex-grow flex flex-col animate-fade-in-up">
+                        <div class="bg-slate-50 border border-slate-200 rounded-lg flex flex-col h-64">
+                            <div class="flex justify-between items-center px-3 py-2 border-b border-slate-200 bg-white rounded-t-lg">
+                                <span class="text-xs font-bold text-gray-600"><i class="fa-solid fa-file-contract text-legal-primary ml-1"></i> المسودة</span>
+                                <button onclick="app.copyToClipboard('g-text-output')" class="text-xs text-legal-primary hover:text-legal-900 transition-colors">
+                                    <i class="fa-regular fa-copy"></i> نسخ
+                                </button>
+                            </div>
+                            <div class="overflow-auto p-3 custom-scrollbar">
+                                <pre class="whitespace-pre-wrap text-xs text-slate-700 font-mono leading-relaxed" id="g-text-output"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-panel rounded-xl shadow-lg border-t-4 border-legal-gold flex flex-col h-full transition-all hover:shadow-xl">
+                <div class="p-6 pb-4 border-b border-gray-100 bg-white">
+                    <h2 class="text-xl font-bold text-legal-900 flex items-center gap-2">
+                        <i class="fa-solid fa-magnifying-glass-chart text-legal-gold"></i>
+                        تحليل المخاطر
+                    </h2>
+                    <p class="text-xs text-gray-500 mt-1">كشف الثغرات القانونية باستخدام الـ AI.</p>
+                </div>
+
+                <div class="p-6 flex-grow flex flex-col">
+                    <form id="analyze-form" class="space-y-4">
+                        <div id="drop-zone" class="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:bg-blue-50 hover:border-legal-primary transition-all cursor-pointer relative group">
+                            <input type="file" id="a-file" accept=".txt,.doc,.docx" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
+                            <div class="text-gray-400 group-hover:text-legal-primary transition-colors">
+                                <i class="fa-solid fa-cloud-arrow-up text-3xl mb-2"></i>
+                                <p class="text-sm font-medium">اضغط لرفع العقد أو اسحبه هنا</p>
+                                <p class="text-[10px] opacity-70 mt-1">يدعم DOCX, PDF, TXT</p>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-legal-900 text-white font-bold py-2.5 rounded-lg btn-hover-effect flex justify-center items-center gap-2">
+                            <span>تحليل العقد</span>
+                            <i class="fa-solid fa-microscope"></i>
+                        </button>
+                    </form>
+
+                    <div id="a-loader" class="hidden flex-col items-center justify-center py-8 space-y-3">
+                        <div class="loader-dots relative w-16 h-4"><div class="bg-legal-gold"></div><div class="bg-legal-gold"></div><div class="bg-legal-gold"></div><div class="bg-legal-gold"></div></div>
+                        <span class="text-xs text-legal-gold font-medium animate-pulse">جاري فحص البنود والمخاطر...</span>
+                    </div>
+
+                    <div id="a-result" class="hidden mt-4 space-y-3 animate-fade-in-up">
+                        <div id="a-risk-output"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-panel rounded-xl shadow-lg border-t-4 border-gray-600 flex flex-col h-full transition-all hover:shadow-xl relative">
+                <div class="p-0 flex flex-col h-full">
+                    <div class="flex border-b border-gray-200">
+                        <button id="tab-new-req" class="flex-1 py-4 text-sm font-bold text-legal-primary border-b-2 border-legal-primary bg-blue-50/50 transition-colors">
+                            <i class="fa-solid fa-circle-plus ml-1"></i> طلب جديد
+                        </button>
+                        <button id="tab-history" class="flex-1 py-4 text-sm font-medium text-gray-500 hover:text-legal-primary hover:bg-gray-50 transition-colors">
+                            <i class="fa-solid fa-clock-rotate-left ml-1"></i> السجل
+                        </button>
+                    </div>
+
+                    <div class="p-6 flex-grow flex flex-col overflow-hidden">
+
+                        <div id="panel-new-req" class="flex flex-col h-full">
+                            <div class="bg-blue-50 border-r-4 border-legal-primary p-3 mb-4 rounded shadow-sm">
+                                <p class="text-[11px] text-gray-700 leading-relaxed">
+                                    <i class="fa-solid fa-circle-info text-legal-primary ml-1"></i>
+                                    تتم مراجعة الطلبات المعقدة بواسطة مستشارين بشريين مدعومين بتقارير الآلة.
+                                </p>
+                            </div>
+                            <form id="manual-request-form" class="space-y-3">
+                                <input type="text" id="m-subject" placeholder="عنوان الاستشارة" required class="w-full p-2.5 bg-white border border-gray-300 rounded-lg text-sm focus:ring-1 focus:ring-legal-primary outline-none">
+                                <input type="text" id="m-parties" placeholder="الأطراف المعنية" required class="w-full p-2.5 bg-white border border-gray-300 rounded-lg text-sm focus:ring-1 focus:ring-legal-primary outline-none">
+                                <textarea id="m-description" rows="3" placeholder="اشرح استفسارك القانوني بدقة..." required class="w-full p-2.5 bg-white border border-gray-300 rounded-lg text-sm focus:ring-1 focus:ring-legal-primary outline-none resize-none"></textarea>
+                                <input type="text" id="m-outcome" placeholder="ما هي النتيجة المرجوة؟" required class="w-full p-2.5 bg-white border border-gray-300 rounded-lg text-sm focus:ring-1 focus:ring-legal-primary outline-none">
+                                <button type="submit" class="w-full bg-slate-700 text-white font-semibold py-2 rounded-lg btn-hover-effect text-sm mt-2">
+                                    إرسال الطلب
+                                </button>
+                            </form>
+                        </div>
+
+                        <div id="panel-history" class="hidden flex-col h-full">
+                            <div id="history-loader" class="text-center py-6 hidden">
+                                <i class="fa-solid fa-circle-notch fa-spin text-legal-primary"></i>
+                            </div>
+                            <div id="history-list" class="space-y-3 overflow-y-auto max-h-[350px] pr-1 custom-scrollbar pb-2">
+                                </div>
+                            <button id="refresh-history-btn" class="mt-auto text-xs text-legal-primary hover:underline text-center w-full pt-2">
+                                <i class="fa-solid fa-rotate"></i> تحديث القائمة
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="p-4 border-t border-gray-100 bg-gray-50 rounded-b-xl">
+                        <button id="toggle-chat-button" class="w-full py-2.5 border border-legal-primary text-legal-primary font-bold rounded-lg hover:bg-legal-primary hover:text-white transition-all duration-300 text-sm flex justify-center items-center gap-2">
+                            <i class="fa-regular fa-comments"></i>
+                            مساعد المستشار (ChatBot)
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <div id="notification-area" class="fixed top-6 left-1/2 transform -translate-x-1/2 space-y-2 z-[100] w-full max-w-sm px-4 pointer-events-none"></div>
+
+    <div id="chat-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50 transition-opacity">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg h-[80vh] flex flex-col overflow-hidden animate-scale-in">
+            <div class="flex justify-between items-center px-6 py-4 bg-legal-900 text-white">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-white text-legal-900 flex items-center justify-center">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold">المساعد الذكي</h3>
+                        <p class="text-[10px] text-gray-300 flex items-center gap-1"><span class="w-1.5 h-1.5 bg-green-500 rounded-full inline-block"></span> متصل الآن</p>
+                    </div>
+                </div>
+                <button id="close-chat-button" class="text-gray-400 hover:text-white transition-colors text-xl">&times;</button>
+            </div>
+
+            <div id="chat-history" class="flex-grow overflow-y-auto p-4 space-y-4 bg-slate-50 custom-scrollbar">
+                <div class="text-center text-gray-400 text-xs py-8">
+                    <i class="fa-solid fa-comment-dots text-3xl mb-2 opacity-30"></i>
+                    <p>مرحباً! يمكنك مناقشة تفاصيل العقد الحالي معي.</p>
+                </div>
+            </div>
+
+            <form id="chat-form" class="p-4 bg-white border-t border-gray-100 flex gap-2">
+                <input type="text" id="chat-input" placeholder="اطرح سؤالك حول العقد..." required
+                    class="flex-grow px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-full text-sm focus:outline-none focus:border-legal-primary focus:ring-1 focus:ring-legal-primary transition-all">
+                <button type="submit" id="chat-send-button" class="bg-legal-primary hover:bg-blue-800 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-transform transform hover:scale-105">
+                    <i class="fa-regular fa-paper-plane text-sm"></i>
+                </button>
+            </form>
+            <div id="chat-loader" class="hidden absolute bottom-16 right-6 text-xs text-gray-500 bg-white px-2 py-1 rounded shadow">يكتب...</div>
+        </div>
+    </div>
+
+    <script type="module">
+        // ---------------------------------------------------------------------------------------------------
+        // Firebase & Logic Module
+        // ---------------------------------------------------------------------------------------------------
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+
+        // Configuration
+        const CONFIG = {
+            appId: typeof __app_id !== 'undefined' ? __app_id : 'default-app-id',
+            firebaseConfig: JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}'),
+            initialToken: typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null,
+            backendUrl: "/api"
+        };
+
+        // State Management
+        class LegalApp {
+            constructor() {
+                this.auth = null;
+                this.userId = null;
+                this.contractContent = "";
+                this.chatHistory = [];
+
+                this.initFirebase();
+                this.setupEventListeners();
+                this.setupDragAndDrop();
+            }
+
+            async initFirebase() {
+                try {
+                    const app = initializeApp(CONFIG.firebaseConfig);
+                    this.auth = getAuth(app);
+
+                    if (CONFIG.initialToken) await signInWithCustomToken(this.auth, CONFIG.initialToken);
+                    else await signInAnonymously(this.auth);
+
+                    onAuthStateChanged(this.auth, (user) => {
+                        if (user) {
+                            this.userId = user.uid;
+                            this.fetchManualRequests();
+                        }
+                    });
+                } catch (error) {
+                    console.error("Auth Error:", error);
+                    this.notify("تعذر الاتصال بخوادم التوثيق", "error");
+                }
+            }
+
+            // --- UI Helpers ---
+            notify(message, type = 'info') {
+                const area = document.getElementById('notification-area');
+                const colors = {
+                    error: 'bg-red-600',
+                    success: 'bg-green-600',
+                    info: 'bg-legal-900'
+                };
+                const icon = type === 'success' ? '<i class="fa-solid fa-check-circle ml-2"></i>' :
+                             type === 'error' ? '<i class="fa-solid fa-circle-exclamation ml-2"></i>' :
+                             '<i class="fa-solid fa-circle-info ml-2"></i>';
+
+                const el = document.createElement('div');
+                el.className = `${colors[type] || colors.info} text-white px-4 py-3 rounded-lg shadow-lg text-sm text-center flex items-center justify-center transform transition-all duration-500 translate-y-2 opacity-0 pointer-events-auto`;
+                el.innerHTML = `${icon} ${message}`;
+
+                area.appendChild(el);
+
+                // Entrance animation
+                requestAnimationFrame(() => {
+                    el.classList.remove('translate-y-2', 'opacity-0');
+                });
+
+                setTimeout(() => {
+                    el.classList.add('opacity-0', '-translate-y-2');
+                    setTimeout(() => el.remove(), 300);
+                }, 4000);
+            }
+
+            copyToClipboard(elementId) {
+                const text = document.getElementById(elementId).innerText;
+                navigator.clipboard.writeText(text).then(() => this.notify("تم نسخ النص للحافظة", "success"));
+            }
+
+            async fetchAPI(endpoint, options = {}, retries = 2) {
+                try {
+                    const response = await fetch(`${CONFIG.backendUrl}${endpoint}`, options);
+                    if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+                    return await response.json();
+                } catch (err) {
+                    if (retries > 0) return this.fetchAPI(endpoint, options, retries - 1);
+                    throw err;
+                }
+            }
+
+            // --- Logic: Generate ---
+            async handleGenerate(e) {
+                e.preventDefault();
+                this.toggleLoader('g-loader', 'g-result', true);
+
+                try {
+                    const data = await this.fetchAPI('/contracts/generate/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            topic: document.getElementById('g-topic').value,
+                            parties: document.getElementById('g-parties').value,
+                            key_terms: document.getElementById('g-key-terms').value,
+                            case_id: Date.now()
+                        })
+                    });
+
+                    this.contractContent = data.content_text;
+                    document.getElementById('g-text-output').textContent = this.contractContent;
+                    this.toggleLoader('g-loader', 'g-result', false);
+                    this.notify("تم صياغة العقد بنجاح", "success");
+                } catch (err) {
+                    this.toggleLoader('g-loader', 'g-result', false, true); // Hide both on error
+                    this.notify("فشل توليد العقد. حاول مرة أخرى.", "error");
+                }
+            }
+
+            // --- Logic: Analyze ---
+            async handleAnalyze(e) {
+                e.preventDefault();
+                const fileInput = document.getElementById('a-file');
+                const file = fileInput.files[0];
+
+                if (!file) return this.notify("يرجى اختيار ملف أولاً", "error");
+
+                this.toggleLoader('a-loader', 'a-result', true);
+
+                const reader = new FileReader();
+                reader.onload = async (ev) => {
+                    this.contractContent = ev.target.result; // Store for chat
+                    const formData = new FormData();
+                    formData.append('file', file);
+
+                    try {
+                        const data = await this.fetchAPI('/analyze_contract/', {
+                            method: 'POST',
+                            body: formData
+                        });
+                        this.renderAnalysis(data.analysis);
+                        this.toggleLoader('a-loader', 'a-result', false);
+                        this.notify("تم اكتمال التحليل", "success");
+                    } catch (err) {
+                        this.toggleLoader('a-loader', 'a-result', false, true);
+                        this.notify("حدث خطأ أثناء تحليل الملف", "error");
+                    }
+                };
+                reader.readAsText(file);
+            }
+
+            renderAnalysis(analysis) {
+                const outputDiv = document.getElementById('a-risk-output');
+                const score = analysis.risk_score;
+
+                let colorClass = score > 70 ? 'text-red-600' : (score > 40 ? 'text-yellow-600' : 'text-green-600');
+                let barColor = score > 70 ? 'bg-red-500' : (score > 40 ? 'bg-yellow-500' : 'bg-green-500');
+                let badgeText = score > 70 ? 'عالي الخطورة' : (score > 40 ? 'متوسط الخطورة' : 'آمن نسبياً');
+
+                outputDiv.innerHTML = `
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-gray-500">مؤشر المخاطر القانونية</span>
+                            <span class="text-xs font-bold px-2 py-1 rounded-full bg-gray-100 ${colorClass}">${badgeText}</span>
+                        </div>
+                        <div class="flex items-end gap-2 mb-2">
+                            <span class="text-3xl font-extrabold ${colorClass}">${score}</span>
+                            <span class="text-sm text-gray-400 mb-1">/ 100</span>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-2.5 overflow-hidden">
+                            <div class="${barColor} h-2.5 rounded-full transition-all duration-1000" style="width: ${score}%"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 p-3 rounded-lg border border-blue-100">
+                        <h4 class="font-bold text-legal-primary text-xs mb-1"><i class="fa-solid fa-list-check ml-1"></i> الملخص التنفيذي</h4>
+                        <p class="text-xs text-gray-700 leading-relaxed">${analysis.summary}</p>
+                    </div>
+
+                    ${analysis.warnings.length > 0 ? `
+                    <div class="bg-red-50 p-3 rounded-lg border border-red-100">
+                        <h4 class="font-bold text-red-700 text-xs mb-2"><i class="fa-solid fa-triangle-exclamation ml-1"></i> تحذيرات حرجة</h4>
+                        <ul class="space-y-1">
+                            ${analysis.warnings.map(w => `<li class="text-xs text-gray-800 flex items-start gap-1.5"><i class="fa-solid fa-circle text-[6px] mt-1.5 text-red-500"></i> ${w}</li>`).join('')}
+                        </ul>
+                    </div>` : ''}
+
+                    <div class="bg-green-50 p-3 rounded-lg border border-green-100">
+                        <h4 class="font-bold text-green-700 text-xs mb-1"><i class="fa-solid fa-lightbulb ml-1"></i> التوصية القانونية</h4>
+                        <p class="text-xs text-gray-800 leading-relaxed">${analysis.recommendation}</p>
+                    </div>
+                `;
+            }
+
+            // --- Logic: Requests & History ---
+            async handleRequestSubmit(e) {
+                e.preventDefault();
+                const form = {
+                    subject: document.getElementById('m-subject').value,
+                    parties: document.getElementById('m-parties').value,
+                    description: document.getElementById('m-description').value,
+                    outcome: document.getElementById('m-outcome').value
+                };
+
+                try {
+                    await this.fetchAPI('/requests/manual/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(form)
+                    });
+                    this.notify("تم إرسال الطلب للمراجعة", "success");
+                    document.getElementById('manual-request-form').reset();
+                    // Auto switch to history
+                    document.getElementById('tab-history').click();
+                } catch (err) {
+                    this.notify("فشل إرسال الطلب", "error");
+                }
+            }
+
+            async fetchManualRequests() {
+                const listContainer = document.getElementById('history-list');
+                const loader = document.getElementById('history-loader');
+
+                loader.classList.remove('hidden');
+
+                try {
+                    const requests = await this.fetchAPI('/requests/manual/', { method: 'GET' });
+                    loader.classList.add('hidden');
+                    listContainer.innerHTML = '';
+
+                    if (!Array.isArray(requests) || requests.length === 0) {
+                        listContainer.innerHTML = '<div class="text-center py-8"><i class="fa-regular fa-folder-open text-3xl text-gray-300 mb-2"></i><p class="text-gray-400 text-xs">لا توجد طلبات سابقة.</p></div>';
+                        return;
+                    }
+
+                    requests.forEach(req => {
+                        const statusConfig = {
+                            'new': { color: 'bg-blue-100 text-blue-800', label: 'جديد' },
+                            'pending': { color: 'bg-yellow-100 text-yellow-800', label: 'قيد المراجعة' },
+                            'resolved': { color: 'bg-green-100 text-green-800', label: 'تم الحل' },
+                            'rejected': { color: 'bg-red-100 text-red-800', label: 'مرفوض' }
+                        };
+                        const status = statusConfig[req.status] || { color: 'bg-gray-100 text-gray-800', label: req.status };
+
+                        const item = document.createElement('div');
+                        item.className = "group p-3 border border-gray-100 bg-white rounded-lg hover:shadow-md transition-all cursor-default";
+                        item.innerHTML = `
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold text-xs text-legal-900 truncate w-2/3" title="${req.subject}">${req.subject}</span>
+                                <span class="text-[9px] px-2 py-0.5 rounded-full font-bold ${status.color}">${status.label}</span>
+                            </div>
+                            <p class="text-[10px] text-gray-500 mb-2 truncate">${req.description}</p>
+                            <div class="flex justify-between items-center border-t border-gray-50 pt-2 mt-1">
+                                <span class="text-[9px] text-gray-400 font-mono">${req.created_at ? new Date(req.created_at).toLocaleDateString('ar-EG') : ''}</span>
+                                <button class="text-[9px] text-legal-primary opacity-0 group-hover:opacity-100 transition-opacity">التفاصيل <i class="fa-solid fa-arrow-left"></i></button>
+                            </div>
+                        `;
+                        listContainer.appendChild(item);
+                    });
+
+                } catch (err) {
+                    loader.classList.add('hidden');
+                    this.notify("فشل تحميل السجل", "error");
+                }
+            }
+
+            // --- UI Helpers (Continued) ---
+            toggleLoader(loaderId, resultId, showLoader, hideResultOnError = false) {
+                const loader = document.getElementById(loaderId);
+                const result = document.getElementById(resultId);
+
+                if (showLoader) {
+                    loader.classList.remove('hidden');
+                    result.classList.add('hidden');
+                } else {
+                    loader.classList.add('hidden');
+                    if (hideResultOnError) {
+                        result.classList.add('hidden');
+                    } else {
+                        result.classList.remove('hidden');
+                    }
+                }
+            }
+
+            // --- Event Listeners and Setup ---
+            setupEventListeners() {
+                // Forms
+                document.getElementById('generate-form')?.addEventListener('submit', (e) => this.handleGenerate(e));
+                document.getElementById('analyze-form')?.addEventListener('submit', (e) => this.handleAnalyze(e));
+                document.getElementById('manual-request-form')?.addEventListener('submit', (e) => this.handleRequestSubmit(e));
+
+                // Tabs
+                document.getElementById('tab-new-req')?.addEventListener('click', () => this.switchTab('new-req'));
+                document.getElementById('tab-history')?.addEventListener('click', () => this.switchTab('history'));
+                document.getElementById('refresh-history-btn')?.addEventListener('click', () => this.fetchManualRequests());
+
+                // Chat Modal
+                document.getElementById('toggle-chat-button')?.addEventListener('click', () => this.toggleChatModal(true));
+                document.getElementById('close-chat-button')?.addEventListener('click', () => this.toggleChatModal(false));
+                document.getElementById('chat-form')?.addEventListener('submit', (e) => this.handleChatSubmit(e));
+            }
+
+            switchTab(panelId) {
+                const panels = ['panel-new-req', 'panel-history'];
+                const tabs = ['tab-new-req', 'tab-history'];
+
+                panels.forEach(id => {
+                    document.getElementById(id)?.classList.add('hidden');
+                });
+                tabs.forEach(id => {
+                    const el = document.getElementById(id);
+                    el.classList.remove('border-legal-primary', 'border-b-2', 'bg-blue-50/50', 'text-legal-primary');
+                    el.classList.add('text-gray-500', 'hover:text-legal-primary', 'hover:bg-gray-50');
+                });
+
+                document.getElementById(`panel-${panelId}`)?.classList.remove('hidden');
+                const activeTab = document.getElementById(`tab-${panelId}`);
+                activeTab.classList.add('border-legal-primary', 'border-b-2', 'bg-blue-50/50', 'text-legal-primary');
+                activeTab.classList.remove('text-gray-500', 'hover:text-legal-primary', 'hover:bg-gray-50');
+
+                if (panelId === 'history') {
+                    this.fetchManualRequests();
+                }
+            }
+
+            // --- Chat Logic ---
+            toggleChatModal(show) {
+                const modal = document.getElementById('chat-modal');
+                if (show) {
+                    modal.classList.remove('hidden');
+                    this.loadChatHistory();
+                } else {
+                    modal.classList.add('hidden');
+                }
+            }
+
+            loadChatHistory() {
+                const historyContainer = document.getElementById('chat-history');
+                historyContainer.innerHTML = '';
+
+                if (this.chatHistory.length === 0) {
+                     historyContainer.innerHTML = `
+                        <div class="text-center text-gray-400 text-xs py-8">
+                            <i class="fa-solid fa-comment-dots text-3xl mb-2 opacity-30"></i>
+                            <p>مرحباً! يمكنك مناقشة تفاصيل العقد الحالي معي.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                this.chatHistory.forEach(msg => this.appendChatMessage(msg.text, msg.sender === 'user'));
+                historyContainer.scrollTop = historyContainer.scrollHeight;
+            }
+
+            appendChatMessage(text, isUser) {
+                const historyContainer = document.getElementById('chat-history');
+                const msg = document.createElement('div');
+                msg.className = `flex ${isUser ? 'justify-end' : 'justify-start'}`;
+
+                const bubble = document.createElement('div');
+                bubble.className = `max-w-[80%] px-4 py-2 rounded-xl text-sm leading-relaxed shadow-sm ${
+                    isUser ? 'bg-legal-primary text-white rounded-br-none' : 'bg-white text-slate-800 rounded-bl-none border border-gray-200'
+                }`;
+                bubble.innerText = text;
+
+                msg.appendChild(bubble);
+                historyContainer.appendChild(msg);
+                historyContainer.scrollTop = historyContainer.scrollHeight;
+            }
+
+            async handleChatSubmit(e) {
+                e.preventDefault();
+                const input = document.getElementById('chat-input');
+                const message = input.value.trim();
+                input.value = '';
+
+                if (!message) return;
+
+                this.chatHistory.push({ text: message, sender: 'user' });
+                this.appendChatMessage(message, true);
+
+                // Show typing indicator
+                document.getElementById('chat-loader').classList.remove('hidden');
+
+                try {
+                    const response = await this.fetchAPI('/chat/ask/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            question: message,
+                            contract_content: this.contractContent, // Send the last generated or analyzed contract
+                            history: this.chatHistory.slice(-5) // Send last 5 messages for context
+                        })
+                    });
+
+                    this.chatHistory.push({ text: response.answer, sender: 'bot' });
+                    this.appendChatMessage(response.answer, false);
+                } catch (err) {
+                    const errorMsg = "عذراً، فشلت عملية الاتصال بالمساعد الذكي.";
+                    this.chatHistory.push({ text: errorMsg, sender: 'bot' });
+                    this.appendChatMessage(errorMsg, false);
+                    this.notify("فشل في الرد على الدردشة", "error");
+                } finally {
+                    document.getElementById('chat-loader').classList.add('hidden');
+                }
+            }
+
+            // --- Drag and Drop Setup ---
+            setupDragAndDrop() {
+                const dropZone = document.getElementById('drop-zone');
+                const fileInput = document.getElementById('a-file');
+
+                ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                    dropZone.addEventListener(eventName, (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }, false);
+                });
+
+                ['dragenter', 'dragover'].forEach(eventName => {
+                    dropZone.addEventListener(eventName, () => dropZone.classList.add('border-legal-primary', 'bg-blue-50'), false);
+                });
+
+                ['dragleave', 'drop'].forEach(eventName => {
+                    dropZone.addEventListener(eventName, () => dropZone.classList.remove('border-legal-primary', 'bg-blue-50'), false);
+                });
+
+                dropZone.addEventListener('drop', (e) => {
+                    const dt = e.dataTransfer;
+                    fileInput.files = dt.files;
+                    this.notify(`تم تحميل ملف: ${dt.files[0].name}`, "info");
+                }, false);
+            }
+        }
+
+        window.app = new LegalApp();
+        document.addEventListener('DOMContentLoaded', () => {
+             // Ensure the initial tab is correctly set after DOM load
+             window.app.switchTab('new-req');
+        });
+    </script>
+</body>
+</html>
